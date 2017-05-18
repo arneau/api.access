@@ -1,12 +1,11 @@
 import {
   GraphQLInt,
-  GraphQLNonNull,
-  GraphQLString
+  GraphQLNonNull
 } from 'graphql'
 
-import LoginType from '../types/Login'
+import LoginType from '../../types/Login'
 
-import LoginModel from '../../database/models/Login'
+import LoginModel from '../../../database/models/Login'
 
 const LoginField = {
   type: LoginType,

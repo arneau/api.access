@@ -3,9 +3,9 @@ import {
   GraphQLString
 } from 'graphql'
 
-import LoginType from '../types/Login'
+import LoginType from '../../types/Login'
 
-import LoginModel from '../../database/models/Login'
+import LoginModel from '../../../database/models/Login'
 
 const LoginsField = {
   type: new GraphQLList(LoginType),
@@ -15,11 +15,10 @@ const LoginsField = {
     }
   },
   resolve: (root, args) => {
-    if (!args.website) {
+    if (args.website === undefined) {
       return LoginModel.findAll()
     } else if (args.website) {
-      let website = args.website
-      return LoginModel.findAllByWebsite(website)
+      return LoginModel.findAllByWebsite(args.website)
     }
   }
 }

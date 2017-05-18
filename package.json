@@ -1,5 +1,5 @@
 {
-  "name": "api3.opened.bible",
+  "name": "api.access",
   "version": "1.0.0",
   "dependencies": {
     "babel-cli": "^6.24.1",
